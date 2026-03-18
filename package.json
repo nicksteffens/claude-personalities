@@ -7,6 +7,7 @@
     "@commitlint/cli": "^20.5.0",
     "@commitlint/config-conventional": "^20.5.0",
     "@release-it/bumper": "^7.0.0",
+    "@release-it/conventional-changelog": "^10.0.6",
     "release-it": "^19.0.0"
   },
   "scripts": {

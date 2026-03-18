@@ -9,6 +9,10 @@
   },
   "npm": false,
   "plugins": {
+    "@release-it/conventional-changelog": {
+      "preset": "conventionalcommits",
+      "infile": false
+    },
     "@release-it/bumper": {
       "in": "package.json",
       "out": [
