@@ -1,0 +1,12 @@
+{
+  "name": "claude-personalities",
+  "owner": { "name": "Nick Steffens" },
+  "plugins": [
+    {
+      "name": "claude-personalities",
+      "source": ".",
+      "description": "Community personality packs for Claude Code",
+      "version": "1.0.0"
+    }
+  ]
+}

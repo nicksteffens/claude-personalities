@@ -1,0 +1,13 @@
+{
+  "name": "claude-personalities",
+  "description": "Swap Claude's personality with community-created character packs. Browse by category, preview styles, and switch instantly.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Nick Steffens",
+    "url": "https://github.com/nicksteffens"
+  },
+  "homepage": "https://github.com/nicksteffens/claude-personalities",
+  "repository": "https://github.com/nicksteffens/claude-personalities",
+  "license": "MIT",
+  "keywords": ["personality", "theme", "character", "tone", "statusline"]
+}

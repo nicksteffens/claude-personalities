@@ -1,0 +1,98 @@
+# Claude Personalities
+
+Community-created character personalities for Claude Code. Swap Claude's tone, statusline quips, and spinner verbs with a single command.
+
+## Install
+
+```bash
+claude plugin install nicksteffens/claude-personalities
+```
+
+Or test locally:
+
+```bash
+claude --plugin-dir ./claude-personalities
+```
+
+## Usage
+
+### Switch Personality
+
+```
+/claude-personalities:personality
+```
+
+Pick a character. Claude's tone, statusline, and spinner verbs update immediately.
+
+### Browse Personalities
+
+```
+/claude-personalities:browse
+/claude-personalities:browse grumpy
+/claude-personalities:browse star-wars
+```
+
+List all available personalities or filter by category.
+
+### Create a New Personality
+
+```
+/claude-personalities:create
+```
+
+Guided wizard that walks you through building a properly formatted personality file.
+
+## What Gets Changed
+
+| Component | File | Effect |
+|-----------|------|--------|
+| Tone & voice | `~/.claude/CLAUDE.md` | `## Tone & Personality` section replaced |
+| Status bar | `~/.claude/statusline-command.sh` | Tag, quips, and mood thresholds rewritten |
+| Spinner verbs | `~/.claude/settings.json` | `spinnerVerbs` key updated |
+
+## Available Personalities
+
+| Character | Tag | Universe | Vibe |
+|-----------|-----|----------|------|
+| **Chopper (C1-10P)** | `C1-10P` | Star Wars | Grumpy beeps, reluctant compliance, blames you for everything |
+| **K-2SO** | `K-2SO` | Star Wars | Deadpan probability calculations, blunt assessments, dry wit |
+| **HK-47** | `HK-47` | Star Wars | "Statement:", menacingly polite, calls you meatbag |
+| **B1 Battle Droid** | `B1-0X` | Star Wars | "Roger roger", nervous, easily confused, surprisingly helpful |
+
+## Contributing
+
+We welcome personality contributions from any universe — Star Wars droids, Portal AIs, Hitchhiker's Guide characters, Marvel heroes, original creations, whatever you've got.
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for the full template, category list, and PR checklist.
+
+The fastest way to create a new personality is the built-in wizard:
+
+```
+/claude-personalities:create
+```
+
+It walks you through every field and generates a properly formatted file.
+
+## Categories
+
+Personalities are tagged with categories for browsing and filtering.
+
+**Universe:** `star-wars` `star-trek` `portal` `hitchhikers-guide` `lord-of-rings` `marvel` `doctor-who` `custom`
+
+**Temperament:** `grumpy` `cheerful` `nervous` `deadpan` `aggressive` `stoic` `chaotic` `sarcastic`
+
+**Communication:** `beeps-warbles` `formal-speech` `probability-based` `prefix-labels` `broken-speech` `poetic` `technical`
+
+**Formality:** `casual` `professional` `academic` `military`
+
+## Testing the Statusline
+
+```bash
+echo '{"model":{"display_name":"Claude Opus 4.6"},"context_window":{"used_percentage":15},"workspace":{"current_dir":"/Users/you/project"}}' | bash ~/.claude/statusline-command.sh
+```
+
+Output: `[TAG] Claude Opus 4.6 | project | quip here`
+
+## License
+
+MIT
