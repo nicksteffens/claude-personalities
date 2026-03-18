@@ -9,15 +9,30 @@ Switch the active character personality. This changes the tone/personality secti
 
 ## Instructions
 
-1. **Find the plugin root**: Use the Glob tool to search for `**/claude-personalities/personalities/*.md` starting from `~/.claude/plugins/` to locate the installed plugin's personality files. If that fails, try globbing from the current working directory in case the plugin is loaded via `--plugin-dir`. Read each file's frontmatter to get the name, description, tag, and categories.
+1. **Find the plugin root**: Use the Glob tool to search for `**/claude-personalities/personalities/*.md` starting from `~/.claude/plugins/` to locate the installed plugin's personality files. If that fails, try globbing from the current working directory in case the plugin is loaded via `--plugin-dir`. Read each file's frontmatter to get the name, description, tag, universe, and categories.
 
-2. **Present choices** using `AskUserQuestion` with the available personalities. Each option should show the character name and description. Use header "Personality".
+2. **Check for direct argument**: If `$ARGUMENTS` is not empty (e.g., `/swap Data`), skip the table and match the argument (case-insensitive, partial match allowed) against the personality `name` fields. If a unique match is found, proceed directly to step 3. If ambiguous or no match, fall through to displaying the table.
 
-3. **Read the selected personality file** in full.
+3. **Display all personalities** as a formatted table, then ask the user to type a character name:
 
-4. **Update CLAUDE.md tone section**: Read `~/.claude/CLAUDE.md`, then use the Edit tool to replace the `## Tone & Personality` section (from `## Tone & Personality` up to but not including the next `#` heading that is NOT under `## Tone & Personality`) with the content from the personality file's `## Tone` section, renamed as `## Tone & Personality`.
+```
+### Available Personalities
 
-5. **Regenerate statusline script**: Parse the `## Quips` section from the personality file. Each `### category` contains quip lines (starting with `- "`). Extract the tag from frontmatter. Write `~/.claude/statusline-command.sh` using this template:
+| Character | Tag | Universe | Description |
+|-----------|-----|----------|-------------|
+| **Chopper (C1-10P)** | `C1-10P` | Star Wars | Grumpy beeps, reluctant compliance |
+| ... | ... | ... | ... |
+
+Type a character name to swap (e.g., "Chopper", "Data", "Marvin"):
+```
+
+Wait for the user's text response. Match their input (case-insensitive, partial match allowed) against the personality `name` fields. If ambiguous or no match, ask again.
+
+4. **Read the selected personality file** in full.
+
+5. **Update CLAUDE.md tone section**: Read `~/.claude/CLAUDE.md`, then use the Edit tool to replace the `## Tone & Personality` section (from `## Tone & Personality` up to but not including the next `#` heading that is NOT under `## Tone & Personality`) with the content from the personality file's `## Tone` section, renamed as `## Tone & Personality`.
+
+6. **Regenerate statusline script**: Parse the `## Quips` section from the personality file. Each `### category` contains quip lines (starting with `- "`). Extract the tag from frontmatter. Write `~/.claude/statusline-command.sh` using this template:
 
 ```bash
 #!/bin/bash
@@ -58,7 +73,7 @@ echo "[{tag}] ${{MODEL}} | ${{DIR}} | ${{QUIP}}"
 
 Replace `{angry_quips}`, `{grumpy_quips}`, `{annoyed_quips}`, `{fresh_quips}` with the quoted quip lines from each `###` section, one per line with 4-space indent. Replace `{tag}`, `{name}`, `{description}` from frontmatter.
 
-6. **Update spinner verbs**: Parse the `## Spinner Verbs` section from the personality file. Each line starting with `- ` is a verb. Read `~/.claude/settings.json`, update (or add) the `spinnerVerbs` key:
+7. **Update spinner verbs**: Parse the `## Spinner Verbs` section from the personality file. Each line starting with `- ` is a verb. Read `~/.claude/settings.json`, update (or add) the `spinnerVerbs` key:
 
 ```json
 {
@@ -71,4 +86,4 @@ Replace `{angry_quips}`, `{grumpy_quips}`, `{annoyed_quips}`, `{fresh_quips}` wi
 
 Write the updated settings back, preserving all other keys.
 
-7. **Confirm the swap** with a short message in the new personality's voice.
+8. **Confirm the swap** with a short message in the new personality's voice.
