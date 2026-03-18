@@ -6,10 +6,17 @@ Community-created character personalities for Claude Code. Swap Claude's tone, s
 
 Inside any Claude Code session, run these two commands (one-time setup):
 
+**Step 1 — Add the marketplace** (tells Claude Code where to find the plugin):
 ```
 /plugin marketplace add nicksteffens/claude-personalities
+```
+
+**Step 2 — Install the plugin** (format: `plugin-name@marketplace-name`):
+```
 /plugin install claude-personalities@claude-personalities
 ```
+
+**Step 3 — Restart Claude Code** to load the plugin.
 
 That's it. The plugin loads automatically on every future `claude` session — no flags needed.
 
