@@ -7,7 +7,7 @@ Want to add a character personality to Claude Code? Here's how.
 1. Fork this repo
 2. Create a new `.md` file in `personalities/` (use the character's name, kebab-case: `marvin-the-paranoid.md`)
 3. Fill in the template below
-4. Submit a PR
+4. Submit a PR with a conventional commit title (e.g., `feat: add GLaDOS personality`)
 
 ## Personality Template
 
@@ -136,10 +136,23 @@ Pick at least one from any facet that applies. You can propose new categories vi
 | `academic` | Scholarly, intellectual |
 | `military` | Regimented, disciplined |
 
+## Commit Convention
+
+This repo uses [Conventional Commits](https://www.conventionalcommits.org/). PR titles are linted automatically.
+
+```
+feat: add GLaDOS personality
+fix: correct HK-47 quip typo
+docs: update category list
+```
+
+**Common types:** `feat` (new personality), `fix` (corrections), `docs` (documentation), `chore` (maintenance)
+
 ## PR Checklist
 
 Before submitting, verify:
 
+- [ ] PR title follows conventional commit format (e.g., `feat: add GLaDOS personality`)
 - [ ] File is in `personalities/` directory
 - [ ] Filename is kebab-case matching the character name
 - [ ] All required frontmatter fields are present
