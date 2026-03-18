@@ -63,6 +63,16 @@ List all available personalities or filter by category.
 
 Guided wizard that walks you through building a properly formatted personality file.
 
+## Reducing Swap Prompts
+
+The `/swap` command edits three files in `~/.claude/`, so Claude will ask for permission on each one. To auto-approve these, copy the example settings file into your project:
+
+```bash
+cp ~/.claude/plugins/claude-personalities/examples/settings.local.json .claude/settings.local.json
+```
+
+This grants edit access only to the files the swap command touches — nothing else.
+
 ## What Gets Changed
 
 | Component | File | Effect |
