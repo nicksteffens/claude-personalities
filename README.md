@@ -16,7 +16,7 @@ Inside any Claude Code session, run these two commands (one-time setup):
 /plugin install claude-personalities@claude-personalities
 ```
 
-**Step 3 — Restart Claude Code** to load the plugin.
+**Step 3 — Activate** by running `/reload-plugins` (or restart Claude Code).
 
 That's it. The plugin loads automatically on every future `claude` session — no flags needed.
 
