@@ -55,6 +55,14 @@ Pick a character. Claude's tone, statusline, and spinner verbs update immediatel
 
 List all available personalities or filter by category.
 
+### Reset to Default
+
+```
+/claude-personalities:reset
+```
+
+Remove the active personality and restore Claude's default behavior. Strips the tone section, statusline quips, and spinner verbs.
+
 ### Create a New Personality
 
 ```
@@ -63,15 +71,15 @@ List all available personalities or filter by category.
 
 Guided wizard that walks you through building a properly formatted personality file.
 
-## Reducing Swap Prompts
+## Reducing Permission Prompts
 
-The `/swap` command edits three files in `~/.claude/`, so Claude will ask for permission on each one. To auto-approve these, copy the example settings file into your project:
+The `/swap` and `/reset` commands edit files in `~/.claude/`, so Claude will ask for permission on each one. To auto-approve these, copy the example settings file into your project:
 
 ```bash
 mkdir -p .claude && cp ~/.claude/plugins/cache/claude-personalities/claude-personalities/*/examples/settings.local.json .claude/settings.local.json
 ```
 
-This grants edit access only to the files the swap command touches — nothing else.
+This grants edit access only to the files the swap and reset commands touch — nothing else.
 
 ## What Gets Changed
 

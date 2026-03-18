@@ -6,7 +6,8 @@
       "Edit(~/.claude/CLAUDE.md)",
       "Edit(~/.claude/settings.json)",
       "Write(~/.claude/statusline-command.sh)",
-      "Skill(personality)"
+      "Skill(personality)",
+      "Bash(trash:~/.claude/statusline-command.sh)"
     ]
   }
 }
