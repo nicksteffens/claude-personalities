@@ -10,6 +10,7 @@
     "release-it": "^19.0.0"
   },
   "scripts": {
-    "release": "release-it"
+    "release": "release-it",
+    "validate": "node scripts/validate-personalities.js"
   }
 }
