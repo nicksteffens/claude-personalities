@@ -1,5 +1,6 @@
 ---
-description: Swap between character personalities for tone, statusline, and spinner verbs. Use when the user wants to change Claude's personality, voice, or tone.
+description: Switch the active character personality for tone, statusline, and spinner verbs
+disable-model-invocation: true
 ---
 
 # Personality Swap

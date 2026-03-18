@@ -60,7 +60,7 @@ Ask the user: "What character do you want to create a personality for? Give me t
 8. **If saving**, write the file to the chosen location.
 
 9. **Remind the contributor** to:
-- Test it locally: `claude --plugin-dir ./claude-personalities` then `/claude-personalities:personality`
+- Test it locally: `claude --plugin-dir ./claude-personalities` then `/claude-personalities:swap`
 - Submit a PR if contributing to the community repo
 - Check the PR checklist in CONTRIBUTING.md
 
