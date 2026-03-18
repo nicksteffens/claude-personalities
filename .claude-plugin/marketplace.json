@@ -1,10 +1,13 @@
 {
   "name": "claude-personalities",
   "owner": { "name": "Nick Steffens" },
+  "metadata": {
+    "description": "Community-created character personalities for Claude Code — swap tone, statusline, and spinner verbs"
+  },
   "plugins": [
     {
       "name": "claude-personalities",
-      "source": ".",
+      "source": "./",
       "description": "Community personality packs for Claude Code",
       "version": "1.0.0"
     }

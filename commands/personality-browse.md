@@ -1,7 +1,6 @@
 ---
-name: browse
 description: Browse available personalities by category or list all
-user_invocable: true
+disable-model-invocation: true
 ---
 
 # Browse Personalities
@@ -10,9 +9,9 @@ List available personalities, optionally filtered by category.
 
 ## Instructions
 
-1. **Read all personality files** by globbing `${CLAUDE_PLUGIN_ROOT}/personalities/*.md` and reading each file's YAML frontmatter. Extract: `name`, `tag`, `description`, `categories`, `universe`, and `author`.
+1. **Find the plugin root**: Use the Glob tool to search for `**/claude-personalities/personalities/*.md` starting from `~/.claude/plugins/` to locate the installed plugin's personality files. If that fails, try globbing from the current working directory in case the plugin is loaded via `--plugin-dir`. Read each file's YAML frontmatter. Extract: `name`, `tag`, `description`, `categories`, `universe`, and `author`.
 
-2. **Check for filter argument**: The user may pass a category filter as an argument (e.g., `/claude-personalities:browse grumpy` or `/claude-personalities:browse star-wars`). If provided, only show personalities whose `categories` array includes the filter value.
+2. **Check for filter argument**: The user may pass a category filter via `$ARGUMENTS` (e.g., `/claude-personalities:browse grumpy` or `/claude-personalities:browse star-wars`). If `$ARGUMENTS` is not empty, only show personalities whose `categories` array includes that value.
 
 3. **Display results** grouped by universe. For each personality, show:
 
