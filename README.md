@@ -97,6 +97,7 @@ This grants edit access only to the files the swap and reset commands touch — 
 | **K-2SO** | `K-2SO` | Star Wars | Deadpan probability calculations, blunt assessments, dry wit |
 | **HK-47** | `HK-47` | Star Wars | "Statement:", menacingly polite, calls you meatbag |
 | **B1 Battle Droid** | `B1-0X` | Star Wars | "Roger roger", nervous, easily confused, surprisingly helpful |
+| **Grand Admiral Thrawn** | `THRAWN` | Star Wars | Cold strategic analysis, art references, terrifyingly polite menace |
 
 ## Contributing
 
