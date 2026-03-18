@@ -9,18 +9,18 @@ Switch the active character personality. This changes the tone/personality secti
 
 ## Instructions
 
-1. **Find the plugin root**: Use the Glob tool to search for `**/claude-personalities/personalities/*.md` starting from `~/.claude/plugins/` to locate the installed plugin's personality files. If that fails, try globbing from the current working directory in case the plugin is loaded via `--plugin-dir`. Read each file's frontmatter to get the name, description, tag, universe, and categories.
+1. **List available personalities**: Find the plugin root by globbing for `**/claude-personalities/scripts/list-personalities.js` starting from `~/.claude/plugins/`. If that fails, try from the current working directory. Run the script with `node <path>/scripts/list-personalities.js`. This outputs JSON with each personality's `file`, `name`, `tag`, `description`, `universe`, and `categories`.
 
-2. **Check for direct argument**: If `$ARGUMENTS` is not empty (e.g., `/swap Data`), skip the table and match the argument (case-insensitive, partial match allowed) against the personality `name` fields. If a unique match is found, proceed directly to step 3. If ambiguous or no match, fall through to displaying the table.
+2. **Check for direct argument**: If `$ARGUMENTS` is not empty (e.g., `/swap Data`), match the argument (case-insensitive, partial match allowed) against the personality `name` fields from step 1. If a unique match is found, proceed directly to step 4. If ambiguous or no match, fall through to step 3.
 
-3. **Display all personalities** as a formatted table, then ask the user to type a character name:
+3. **Display all personalities** as a formatted table using the JSON from step 1, then ask the user to type a character name:
 
 ```
 ### Available Personalities
 
 | Character | Tag | Universe | Description |
 |-----------|-----|----------|-------------|
-| **Chopper (C1-10P)** | `C1-10P` | Star Wars | Grumpy beeps, reluctant compliance |
+| **{name}** | `{tag}` | {universe} | {description} |
 | ... | ... | ... | ... |
 
 Type a character name to swap (e.g., "Chopper", "Data", "Marvin"):
@@ -28,7 +28,7 @@ Type a character name to swap (e.g., "Chopper", "Data", "Marvin"):
 
 Wait for the user's text response. Match their input (case-insensitive, partial match allowed) against the personality `name` fields. If ambiguous or no match, ask again.
 
-4. **Read the selected personality file** in full.
+4. **Read the selected personality file** in full. The file is located at the same plugin root under `personalities/{file}` using the `file` field from the JSON.
 
 5. **Update CLAUDE.md tone section**: Read `~/.claude/CLAUDE.md`, then use the Edit tool to replace the `## Tone & Personality` section (from `## Tone & Personality` up to but not including the next `#` heading that is NOT under `## Tone & Personality`) with the content from the personality file's `## Tone` section, renamed as `## Tone & Personality`.
 
