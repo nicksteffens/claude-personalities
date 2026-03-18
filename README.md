@@ -40,7 +40,7 @@ claude --plugin-dir ./claude-personalities
 ### Switch Personality
 
 ```
-/claude-personalities:personality
+/claude-personalities:swap
 ```
 
 Pick a character. Claude's tone, statusline, and spinner verbs update immediately.
