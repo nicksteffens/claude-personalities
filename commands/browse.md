@@ -9,7 +9,7 @@ List available personalities, optionally filtered by category.
 
 ## Instructions
 
-1. **Find the plugin root**: Use the Glob tool to search for `**/claude-personalities/personalities/*.md` starting from `~/.claude/plugins/` to locate the installed plugin's personality files. If that fails, try globbing from the current working directory in case the plugin is loaded via `--plugin-dir`. Read each file's YAML frontmatter. Extract: `name`, `tag`, `description`, `categories`, `universe`, and `author`.
+1. **List available personalities**: Find the plugin root by globbing for `**/claude-personalities/scripts/list-personalities.js` starting from `~/.claude/plugins/`. If that fails, try from the current working directory. Run the script with `node <path>/scripts/list-personalities.js`. This outputs JSON with each personality's `file`, `name`, `tag`, `description`, `universe`, and `categories`.
 
 2. **Check for filter argument**: The user may pass a category filter via `$ARGUMENTS` (e.g., `/claude-personalities:browse grumpy` or `/claude-personalities:browse star-wars`). If `$ARGUMENTS` is not empty, only show personalities whose `categories` array includes that value.
 
