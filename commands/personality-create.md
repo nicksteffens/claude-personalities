@@ -1,7 +1,6 @@
 ---
-name: create
 description: Generate a new personality file from a guided template
-user_invocable: true
+disable-model-invocation: true
 ---
 
 # Create a New Personality
@@ -55,7 +54,7 @@ Ask the user: "What character do you want to create a personality for? Give me t
 7. **Ask where to save** using `AskUserQuestion`:
 
 "Where should I save this personality file?"
-- Option 1: `${CLAUDE_PLUGIN_ROOT}/personalities/{kebab-name}.md` (save directly into the plugin — for maintainers)
+- Option 1: `the plugin's personalities/ directory` (save directly into the plugin — for maintainers)
 - Option 2: Show the content and let the user copy it (for contributors who will PR)
 
 8. **If saving**, write the file to the chosen location.

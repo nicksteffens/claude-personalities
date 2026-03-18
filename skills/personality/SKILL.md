@@ -1,7 +1,5 @@
 ---
-name: personality
-description: Swap between character personalities for tone, statusline, and spinner verbs. Supports browsing by category.
-user_invocable: true
+description: Swap between character personalities for tone, statusline, and spinner verbs. Use when the user wants to change Claude's personality, voice, or tone.
 ---
 
 # Personality Swap
@@ -10,7 +8,7 @@ Switch the active character personality. This changes the tone/personality secti
 
 ## Instructions
 
-1. **Read available personalities** by globbing `${CLAUDE_PLUGIN_ROOT}/personalities/*.md` and reading each file's frontmatter to get the name, description, tag, and categories.
+1. **Find the plugin root**: Use the Glob tool to search for `**/claude-personalities/personalities/*.md` starting from `~/.claude/plugins/` to locate the installed plugin's personality files. If that fails, try globbing from the current working directory in case the plugin is loaded via `--plugin-dir`. Read each file's frontmatter to get the name, description, tag, and categories.
 
 2. **Present choices** using `AskUserQuestion` with the available personalities. Each option should show the character name and description. Use header "Personality".
 
