@@ -6,7 +6,45 @@ on:
       - 'personalities/*.md'
 
 jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Get changed personality files
+        id: changed
+        run: |
+          FILES=$(gh pr diff ${{ github.event.pull_request.number }} --name-only | grep '^personalities/.*\.md$' || true)
+          echo "files=$FILES" >> "$GITHUB_OUTPUT"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Validate personality files
+        if: steps.changed.outputs.files != ''
+        run: node scripts/validate-personalities.js ${{ steps.changed.outputs.files }}
+
+  commitlint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - run: npm ci
+
+      - name: Lint PR title
+        run: echo "${{ github.event.pull_request.title }}" | npx commitlint --verbose
+
   auto-merge:
+    needs: [validate, commitlint]
     runs-on: ubuntu-latest
     steps:
       - name: Check PR only touches personality files
@@ -22,8 +60,8 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Enable auto-merge
+      - name: Merge PR
         if: steps.check.outputs.personality_only == 'true'
-        run: gh pr merge ${{ github.event.pull_request.number }} --auto --squash --repo ${{ github.repository }}
+        run: gh pr merge ${{ github.event.pull_request.number }} --squash --repo ${{ github.repository }}
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
