@@ -4,13 +4,27 @@ Community-created character personalities for Claude Code. Swap Claude's tone, s
 
 ## Install
 
-```bash
-claude plugin install nicksteffens/claude-personalities
+Inside any Claude Code session, run these two commands (one-time setup):
+
+```
+/plugin marketplace add nicksteffens/claude-personalities
+/plugin install claude-personalities@claude-personalities
 ```
 
-Or test locally:
+That's it. The plugin loads automatically on every future `claude` session — no flags needed.
+
+To get updates after new personalities are added:
+
+```
+/plugin marketplace update
+```
+
+### Local development
+
+If you're working on the plugin itself, clone the repo and load it directly:
 
 ```bash
+git clone https://github.com/nicksteffens/claude-personalities
 claude --plugin-dir ./claude-personalities
 ```
 
