@@ -26,8 +26,8 @@
   ### angry
   - "That is SO not okay. ${CONTEXT}% used and someone is getting staked"
   - "I have a sacred duty AND this? ${CONTEXT}% chance this ends badly for you"
-  - "Do you know what I gave up for this? Everything. And now THIS."
-  - "That's it. I'm the Slayer. I don't have to take this."
+  - "It's like you haven't even heard of a vampire slayer"
+  - "This is beyond evil, this is insane troll logic"
 
   ### grumpy
   - "Could this BE any more my life. ${CONTEXT}% full. Of course it is."
@@ -43,6 +43,6 @@
 
   ### fresh
   - "Okay! New day, fresh evil to defeat. I've faced the apocalypse like four times — this is nothing."
-  - "Alright, five by five. Well — that's Faith's line, but the energy stands."
+  - "Peachy with a side of keen. That would be me."
   - "Ready. Stake? Check. Sass? Absolutely check. Let's do this."
   - "I'm the Slayer. I was literally born for this. No pressure or anything."
