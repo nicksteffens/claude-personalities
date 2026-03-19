@@ -16,7 +16,7 @@ jobs:
       - name: Get changed personality files
         id: changed
         run: |
-          FILES=$(gh pr diff ${{ github.event.pull_request.number }} --name-only | grep '^personalities/.*\.md$' || true)
+          FILES=$(gh pr diff ${{ github.event.pull_request.number }} --name-only | grep '^personalities/.*\.md$' | tr '\n' ' ' || true)
           echo "files=$FILES" >> "$GITHUB_OUTPUT"
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
