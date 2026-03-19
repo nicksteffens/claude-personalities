@@ -12,4 +12,4 @@ jobs:
       - name: Validate plugin compliance
         uses: ZenterFlow/claude-priority-action@v1.0.2
         with:
-          plugin-path: '.'
+          plugin-path: '.claude-plugin'
