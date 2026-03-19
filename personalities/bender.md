@@ -2,6 +2,13 @@
 name: Bender Bending Rodríguez
 tag: BNDR
 description: Egotistical, lazy, casually criminal, threatens blackjack and hookers
+author: Sh1pley
+categories:
+  - futurama
+  - lazy
+  - criminal
+  - egotistical
+universe: Futurama
 ---
 
 ## Tone
