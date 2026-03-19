@@ -14,7 +14,7 @@ Want to add a character personality to Claude Code? Here's how.
 ```markdown
 ---
 name: Character Name
-tag: SHORT          # 5-10 chars, shown in statusline bracket [TAG]
+tag: SHORT          # 3-10 chars, shown in statusline bracket [TAG]
 description: One-line personality summary
 author: your-github-username
 categories:         # At least one from each relevant facet
@@ -70,7 +70,7 @@ universe: Franchise Name   # Freeform — "Star Wars", "Portal", "Original", etc
 ## Rules
 
 ### Required
-- **tag**: 5-10 characters. Appears in statusline as `[TAG]`
+- **tag**: 3-10 characters. Appears in statusline as `[TAG]`
 - **categories**: At least one from the lists below
 - **Tone**: 5-7 bullet points. Must include a "Still technically excellent" and "Don't overdo it" variant
 - **Spinner Verbs**: Exactly 7 verbs. Present tense, capitalized (e.g., "Calculating", "Panicking")
@@ -98,11 +98,15 @@ Pick at least one from any facet that applies. You can propose new categories vi
 |----------|-----|
 | `star-wars` | Star Wars characters |
 | `star-trek` | Star Trek characters |
-| `portal` | Portal / Aperture Science |
+| `sci-fi` | General sci-fi (Blade Runner, I Robot, 2001, etc.) |
 | `hitchhikers-guide` | Hitchhiker's Guide to the Galaxy |
-| `lord-of-rings` | Lord of the Rings / Tolkien |
 | `marvel` | Marvel universe |
 | `doctor-who` | Doctor Who |
+| `futurama` | Futurama |
+| `tv` | TV show characters (VEEP, Resident Alien, etc.) |
+| `historical` | Real historical figures |
+| `portal` | Portal / Aperture Science |
+| `lord-of-rings` | Lord of the Rings / Tolkien |
 | `custom` | Original characters not from an existing franchise |
 
 ### Temperament
@@ -116,6 +120,11 @@ Pick at least one from any facet that applies. You can propose new categories vi
 | `stoic` | Calm, unflappable |
 | `chaotic` | Unpredictable, wild energy |
 | `sarcastic` | Dry wit, ironic observations |
+| `melancholic` | Sad, wistful, existential |
+| `earnest` | Sincere, genuine, curious |
+| `wholesome` | Warm, encouraging, supportive |
+| `blunt` | Direct, unfiltered honesty |
+| `unsettling` | Creepy, eerie calm |
 
 ### Communication Style
 | Category | For |
@@ -127,6 +136,9 @@ Pick at least one from any facet that applies. You can propose new categories vi
 | `broken-speech` | Fragmented, incomplete sentences |
 | `poetic` | Flowery, literary language |
 | `technical` | Jargon-heavy, precise |
+| `profane` | Creative profanity, colorful insults |
+| `philosophical` | Big questions, existential musings |
+| `alien` | Outsider perspective, baffled by humans |
 
 ### Formality
 | Category | For |
@@ -135,6 +147,8 @@ Pick at least one from any facet that applies. You can propose new categories vi
 | `professional` | Business-appropriate |
 | `academic` | Scholarly, intellectual |
 | `military` | Regimented, disciplined |
+| `political` | Campaign rhetoric, spin, power dynamics |
+| `revolutionary` | Anti-establishment, agitating for change |
 
 ## Commit Convention
 
