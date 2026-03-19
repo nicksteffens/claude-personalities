@@ -23,7 +23,7 @@ That's it. The plugin loads automatically on every future `claude` session — n
 To get updates after new personalities are added:
 
 ```
-/plugin marketplace update
+/claude-personalities:update
 ```
 
 ### Local development
@@ -62,6 +62,14 @@ List all available personalities or filter by category.
 ```
 
 Remove the active personality and restore Claude's default behavior. Strips the tone section, statusline quips, and spinner verbs.
+
+### Update Plugin
+
+```
+/claude-personalities:update
+```
+
+Pull the latest version and see what new personalities were added.
 
 ### Create a New Personality
 
