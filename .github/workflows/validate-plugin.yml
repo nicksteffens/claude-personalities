@@ -10,6 +10,6 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Validate plugin compliance
-        uses: ZenterFlow/claude-priority-action@v1
+        uses: ZenterFlow/claude-priority-action@v1.0.2
         with:
           plugin-path: '.'
