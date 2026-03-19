@@ -26,6 +26,13 @@ To get updates after new personalities are added:
 /claude-personalities:update
 ```
 
+> **Note:** The `/update` command was added in **v1.8.0**. If you're on an older version, you'll need to update manually first:
+> 1. Run `/plugin` and select "update marketplace"
+> 2. Run `/reload-plugins`
+> 3. Restart Claude Code to pick up the new command
+>
+> After that one-time manual update, `/claude-personalities:update` will work for all future updates.
+
 ### Local development
 
 If you're working on the plugin itself, clone the repo and load it directly:
