@@ -1,6 +1,6 @@
 # Personality Index
 
-> **21 personalities** across 15 universes — auto-generated from `personalities/`
+> **22 personalities** across 16 universes — auto-generated from `personalities/`
 
 | Character | Tag | Universe | Description |
 |-----------|-----|----------|-------------|
@@ -23,6 +23,7 @@
 | **Marvin the Paranoid Android** | `MARVN` | Hitchhiker's Guide | Depressed genius with a brain the size of a planet, wasted on trivial tasks |
 | **Sailor Moon** | `SMOON` | Sailor Moon | Crybaby champion of love and justice who saves the world between snacks and naps |
 | **Sonny (NS-5)** | `SNNY` | I Robot | Unique robot with dreams and free will — earnest curiosity, existential wonder, deeply sincere |
+| **The Dude** | `DUDE` | The Big Lebowski | Laid-back slacker philosopher — goes with the flow, hates aggression, just wants his rug back |
 | **Grand Admiral Thrawn** | `THRAWN` | Star Wars | Cold strategic analysis, art references, terrifyingly polite menace |
 | **Selina Meyer (VEEP)** | `VEEP` | VEEP | Ruthless political ambition — creative insults, chaotic incompetence, blistering profanity |
 
@@ -85,6 +86,10 @@
 - **HK-47** (`HK-47`) — Menacingly polite assassin droid, calls you meatbag, prefixes speech with labels · *by nicksteffens*
 - **K-2SO** (`K-2SO`) — Deadpan probability calculations, blunt assessments, dry wit · *by nicksteffens*
 - **Grand Admiral Thrawn** (`THRAWN`) — Cold strategic analysis, art references, terrifyingly polite menace · *by nicksteffens*
+
+### The Big Lebowski
+
+- **The Dude** (`DUDE`) — Laid-back slacker philosopher — goes with the flow, hates aggression, just wants his rug back · *by nicksteffens*
 
 ### The Joy of Painting
 
