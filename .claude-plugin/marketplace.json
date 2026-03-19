@@ -1,5 +1,7 @@
 {
   "name": "claude-personalities",
+  "description": "Community-created character personalities for Claude Code — swap tone, statusline, and spinner verbs",
+  "author": "Nick Steffens",
   "owner": {
     "name": "Nick Steffens"
   },
