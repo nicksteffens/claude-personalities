@@ -34,12 +34,12 @@ Every `.md` file in `personalities/` must have:
 
 | Command | What it does |
 |---------|-------------|
-| `node scripts/validate-personalities.js` | Lint all personality files (runs in CI) |
-| `node scripts/list-personalities.js` | Output JSON index of all personalities (official + custom) |
-| `node scripts/generate-index.js` | Regenerate PERSONALITIES.md (automated by CI on personality changes) |
-| `npm run validate` | Alias for validate-personalities |
+| `npm test` | Lint all personality files — run before committing (also `npm run validate`) |
+| `npm run list` | Output JSON index of all personalities (official + custom) |
+| `npm run generate` | Regenerate PERSONALITIES.md (automated by CI on personality changes) |
+| `npm run preview -- <file>` | Preview a personality's tone, verbs, and statusline samples |
 
-Always run `node scripts/validate-personalities.js` before committing changes to personality files.
+Always run `npm test` before committing changes to personality files.
 
 ## Commit Conventions
 
@@ -67,6 +67,6 @@ Uses `npm` (no volta, no yarn). Node 20.
 ## PR Guidelines
 
 - PR titles must be conventional commits (they're linted)
-- Run `node scripts/validate-personalities.js` locally before pushing
+- Run `npm test` locally before pushing
 - See CONTRIBUTING.md for the full personality template and PR checklist
 - `PERSONALITIES.md` is auto-generated — do not edit manually

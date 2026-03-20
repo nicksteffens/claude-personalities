@@ -5,9 +5,10 @@ Want to add a character personality to Claude Code? Here's how.
 ## Quick Start
 
 1. Fork this repo
-2. Create a new `.md` file in `personalities/` (use the character's name, kebab-case: `marvin-the-paranoid.md`)
-3. Fill in the template below
-4. Submit a PR with a conventional commit title (e.g., `feat: add GLaDOS personality`)
+2. Copy the template: `cp templates/personality.md personalities/my-character.md`
+3. Fill in the template
+4. Validate: `npm test personalities/my-character.md`
+5. Submit a PR with a conventional commit title (e.g., `feat: add GLaDOS personality`)
 
 ## Personality Template
 

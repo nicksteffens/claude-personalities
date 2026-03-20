@@ -148,13 +148,13 @@ function validateFile(filePath, schema) {
   try {
     content = fs.readFileSync(filePath, 'utf-8');
   } catch (err) {
-    return { errors: [`Could not read file: ${err.message}`] };
+    return { errors: [`Could not read file: ${err.message}`], tag: null };
   }
 
   const fields = parseFrontmatter(content);
   if (!fields) {
     errors.push('Missing or malformed frontmatter (must be between --- delimiters)');
-    return { errors };
+    return { errors, tag: null };
   }
   validateFrontmatter(fields, schema.frontmatter, errors);
 
@@ -162,7 +162,34 @@ function validateFile(filePath, schema) {
   const sections = parseSections(body);
   validateSections(sections, schema.sections, errors);
 
-  return { errors };
+  return { errors, tag: fields.tag || null };
+}
+
+function checkDuplicateTags(dir) {
+  if (!fs.existsSync(dir)) return [];
+
+  const tagMap = new Map(); // tag -> [filenames]
+  const files = fs.readdirSync(dir).filter(f => f.endsWith('.md'));
+
+  for (const file of files) {
+    const content = fs.readFileSync(path.join(dir, file), 'utf-8');
+    const fields = parseFrontmatter(content);
+    if (!fields || !fields.tag) continue;
+
+    const tag = fields.tag.toUpperCase();
+    if (!tagMap.has(tag)) {
+      tagMap.set(tag, []);
+    }
+    tagMap.get(tag).push(file);
+  }
+
+  const errors = [];
+  for (const [tag, files] of tagMap) {
+    if (files.length > 1) {
+      errors.push(`Duplicate tag "${tag}" found in: ${files.join(', ')}`);
+    }
+  }
+  return errors;
 }
 
 function main() {
@@ -208,6 +235,17 @@ function main() {
     hasErrors = true;
     console.error(`\n✗ ${relPath}`);
     for (const err of errors) {
+      console.error(`  ERROR: ${err}`);
+    }
+  }
+
+  // Check for duplicate tags across all personality files
+  const personalitiesDir = path.join(process.cwd(), 'personalities');
+  const dupeErrors = checkDuplicateTags(personalitiesDir);
+  if (dupeErrors.length > 0) {
+    hasErrors = true;
+    console.error('\n✗ Duplicate tags');
+    for (const err of dupeErrors) {
       console.error(`  ERROR: ${err}`);
     }
   }
