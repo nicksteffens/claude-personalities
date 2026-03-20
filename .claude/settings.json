@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node scripts/validate-personalities.js*)",
+      "Bash(node scripts/list-personalities.js)",
+      "Bash(node scripts/generate-index.js)",
+      "Bash(npm run validate*)",
+      "Bash(gh pr:*)",
+      "Bash(gh issue:*)"
+    ],
+    "deny": [
+      "Bash(rm -rf *)",
+      "Bash(rm personalities/*)",
+      "Bash(npm publish*)",
+      "Bash(npx release-it*)"
+    ]
+  }
+}
