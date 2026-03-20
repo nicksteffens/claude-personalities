@@ -18,17 +18,19 @@ Switch the active character personality. This changes the tone/personality secti
 ```
 ### Available Personalities
 
-| Character | Tag | Universe | Description |
-|-----------|-----|----------|-------------|
-| **{name}** | `{tag}` | {universe} | {description} |
-| ... | ... | ... | ... |
+| Character | Tag | Universe | Source | Description |
+|-----------|-----|----------|--------|-------------|
+| **{name}** | `{tag}` | {universe} | {source badge} | {description} |
+| ... | ... | ... | ... | ... |
 
 Type a character name to swap (e.g., "Chopper", "Data", "Marvin"):
 ```
 
+Source badges: `Official` for `source: "official"`, `Custom` for `source: "custom"`, `Custom (override)` for `source: "custom-override"`.
+
 Wait for the user's text response. Match their input (case-insensitive, partial match allowed) against the personality `name` fields. If ambiguous or no match, ask again.
 
-4. **Read the selected personality file** in full. The file is located at the same plugin root under `personalities/{file}` using the `file` field from the JSON.
+4. **Read the selected personality file** in full. Use the `filePath` field from the JSON directly — this is the absolute path to the `.md` file (which may be in the plugin's `personalities/` directory or in `~/.claude/personalities/` for custom personalities).
 
 5. **Update CLAUDE.md tone section**: Read `~/.claude/CLAUDE.md`, then use the Edit tool to replace the `## Tone & Personality` section (from `## Tone & Personality` up to but not including the next `#` heading that is NOT under `## Tone & Personality`) with the content from the personality file's `## Tone` section, renamed as `## Tone & Personality`.
 

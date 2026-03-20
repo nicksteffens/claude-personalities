@@ -54,15 +54,18 @@ Ask the user: "What character do you want to create a personality for? Give me t
 7. **Ask where to save** using `AskUserQuestion`:
 
 "Where should I save this personality file?"
-- Option 1: `the plugin's personalities/ directory` (save directly into the plugin — for maintainers)
-- Option 2: Show the content and let the user copy it (for contributors who will PR)
+- Option 1: `~/.claude/personalities/` (recommended) — custom personality, immediately available, persists across plugin updates
+- Option 2: `the plugin's personalities/ directory` — for maintainers developing locally
+- Option 3: Show the content and let the user copy it — for contributors who will PR
 
-8. **If saving**, write the file to the chosen location.
+8. **If saving to `~/.claude/personalities/`**, run `mkdir -p ~/.claude/personalities/` first to ensure the directory exists, then write the file there.
 
-9. **Remind the contributor** to:
-- Test it locally: `claude --plugin-dir ./claude-personalities` then `/claude-personalities:swap`
-- Submit a PR if contributing to the community repo
-- Check the PR checklist in CONTRIBUTING.md
+   **If saving to the plugin directory**, write the file to the plugin's `personalities/` directory.
+
+9. **Remind the user** based on save location:
+- **If saved as custom** (`~/.claude/personalities/`): Tell the user it's immediately available — they can run `/swap` right now. Mention that custom personalities persist across plugin updates.
+- **If saved to plugin directory**: Remind them to test locally and submit a PR if contributing.
+- **If showing content**: Remind them to check the PR checklist in CONTRIBUTING.md.
 
 ## Quality Checks
 

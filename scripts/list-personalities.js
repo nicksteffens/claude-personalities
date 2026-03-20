@@ -4,6 +4,7 @@
 
 const fs = require('fs');
 const path = require('path');
+const os = require('os');
 
 function parseFrontmatter(content) {
   const match = content.match(/^---\r?\n([\s\S]*?)\r?\n---/);
@@ -38,26 +39,58 @@ function parseFrontmatter(content) {
   return fields;
 }
 
-// Find the personalities directory relative to this script
-const personalitiesDir = path.join(__dirname, '..', 'personalities');
+function scanDir(dir, source) {
+  if (!fs.existsSync(dir)) return [];
 
-const files = fs.readdirSync(personalitiesDir).filter(f => f.endsWith('.md')).sort();
+  const files = fs.readdirSync(dir).filter(f => f.endsWith('.md')).sort();
+  const results = [];
 
-const personalities = [];
+  for (const file of files) {
+    const filePath = path.join(dir, file);
+    const content = fs.readFileSync(filePath, 'utf8');
+    const frontmatter = parseFrontmatter(content);
+    if (!frontmatter || !frontmatter.name) continue;
 
-for (const file of files) {
-  const content = fs.readFileSync(path.join(personalitiesDir, file), 'utf8');
-  const frontmatter = parseFrontmatter(content);
-  if (!frontmatter || !frontmatter.name) continue;
+    results.push({
+      file,
+      name: frontmatter.name,
+      tag: frontmatter.tag || '',
+      description: frontmatter.description || '',
+      universe: frontmatter.universe || 'Unknown',
+      categories: Array.isArray(frontmatter.categories) ? frontmatter.categories : [],
+      source,
+      filePath,
+    });
+  }
 
-  personalities.push({
-    file,
-    name: frontmatter.name,
-    tag: frontmatter.tag || '',
-    description: frontmatter.description || '',
-    universe: frontmatter.universe || 'Unknown',
-    categories: Array.isArray(frontmatter.categories) ? frontmatter.categories : [],
-  });
+  return results;
 }
+
+const officialDir = path.join(__dirname, '..', 'personalities');
+const customDir = path.join(os.homedir(), '.claude', 'personalities');
+
+const officialPersonalities = scanDir(officialDir, 'official');
+const customPersonalities = scanDir(customDir, 'custom');
+
+// Build a set of official filenames for override detection
+const officialFiles = new Set(officialPersonalities.map(p => p.file));
+
+// Mark custom overrides and build merged map (custom wins on filename collision)
+const merged = new Map();
+
+for (const p of officialPersonalities) {
+  merged.set(p.file, p);
+}
+
+for (const p of customPersonalities) {
+  if (officialFiles.has(p.file)) {
+    p.source = 'custom-override';
+  }
+  merged.set(p.file, p); // custom replaces official on collision
+}
+
+const personalities = Array.from(merged.values()).sort((a, b) =>
+  a.name.toLowerCase().localeCompare(b.name.toLowerCase())
+);
 
 console.log(JSON.stringify(personalities, null, 2));
