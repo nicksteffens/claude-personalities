@@ -37,6 +37,7 @@ Every `.md` file in `personalities/` must have:
 | `npm test` | Lint all personality files — run before committing (also `npm run validate`) |
 | `npm run list` | Output JSON index of all personalities (official + custom) |
 | `npm run generate` | Regenerate PERSONALITIES.md (automated by CI on personality changes) |
+| `npm run preview -- <file>` | Preview a personality's tone, verbs, and statusline samples |
 
 Always run `npm test` before committing changes to personality files.
 

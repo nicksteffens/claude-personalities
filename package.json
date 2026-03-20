@@ -15,6 +15,7 @@
     "validate": "node scripts/validate-personalities.js",
     "list": "node scripts/list-personalities.js",
     "generate": "node scripts/generate-index.js",
+    "preview": "node scripts/preview-personality.js",
     "release": "release-it"
   }
 }
