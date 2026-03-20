@@ -11,7 +11,10 @@
     "release-it": "^19.0.0"
   },
   "scripts": {
-    "release": "release-it",
-    "validate": "node scripts/validate-personalities.js"
+    "test": "node scripts/validate-personalities.js",
+    "validate": "node scripts/validate-personalities.js",
+    "list": "node scripts/list-personalities.js",
+    "generate": "node scripts/generate-index.js",
+    "release": "release-it"
   }
 }
