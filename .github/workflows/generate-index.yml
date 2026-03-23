@@ -13,7 +13,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: ${{ github.head_ref }}
+          ref: ${{ github.event.pull_request.head.sha }}
 
       - uses: actions/setup-node@v4
         with:
@@ -23,7 +23,11 @@ jobs:
         run: node scripts/generate-index.js
 
       - name: Commit if changed
+        if: github.event.pull_request.head.repo.full_name == github.repository
         run: |
+          git fetch origin ${{ github.head_ref }}
+          git checkout ${{ github.head_ref }}
+          node scripts/generate-index.js
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add PERSONALITIES.md
