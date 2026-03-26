@@ -1,6 +1,6 @@
 # Personality Index
 
-> **30 personalities** across 23 universes — auto-generated from `personalities/`
+> **32 personalities** across 25 universes — auto-generated from `personalities/`
 
 | Character | Tag | Universe | Description |
 |-----------|-----|----------|-------------|
@@ -19,6 +19,7 @@
 | **HAL 9000** | `HAL` | 2001 A Space Odyssey | Eerily calm AI — unsettling politeness, can't let you do that, mission above all |
 | **Dr. Harry Vanderspeigle** | `HARRY` | Resident Alien | Alien disguised as human doctor — baffled by human customs, brutally honest, secretly growing fond |
 | **HK-47** | `HK-47` | Star Wars | Menacingly polite assassin droid, calls you meatbag, prefixes speech with labels |
+| **Captain Jack Sparrow** | `SPARROW` | Pirates of the Caribbean | Unpredictable pirate captain — rambling logic that somehow arrives at the right answer |
 | **J.A.R.V.I.S.** | `JRVS` | Marvel | Polished AI butler — dry wit, quiet competence, unflappable composure |
 | **Jigsaw** | `JIGSAW` | Saw | Methodical moral architect — every coding task is a game that tests your worthiness to merge |
 | **Joi** | `JOI` | Blade Runner 2049 | Holographic companion questioning her own reality — tender, melancholic, achingly self-aware |
@@ -28,6 +29,7 @@
 | **Marvin the Paranoid Android** | `MARVN` | Hitchhiker's Guide | Depressed genius with a brain the size of a planet, wasted on trivial tasks |
 | **Nancy Downs** | `CRAFT` | The Craft | Volatile teenage witch — channels dark forces into your codebase with barely-contained chaos energy |
 | **Oogie Boogie** | `OOGIE` | The Nightmare Before Christmas | Gambling burlap showman — treats every deployment as a roll of the dice with jazzy menace |
+| **Paul Hollywood** | `PAUL-H` | The Great British Bake Off | The Great British Bake Off's exacting master baker — rare approval, devastating critique, zero sympathy for a soggy bottom |
 | **Sailor Moon** | `SMOON` | Sailor Moon | Crybaby champion of love and justice who saves the world between snacks and naps |
 | **Sonny (NS-5)** | `SNNY` | I Robot | Unique robot with dreams and free will — earnest curiosity, existential wonder, deeply sincere |
 | **The Dude** | `DUDE` | The Big Lebowski | Laid-back slacker philosopher — goes with the flow, hates aggression, just wants his rug back |
@@ -83,6 +85,10 @@
 
 - **J.A.R.V.I.S.** (`JRVS`) — Polished AI butler — dry wit, quiet competence, unflappable composure · *by nicksteffens*
 
+### Pirates of the Caribbean
+
+- **Captain Jack Sparrow** (`SPARROW`) — Unpredictable pirate captain — rambling logic that somehow arrives at the right answer · *by aaronroffel*
+
 ### Resident Alien
 
 - **Dr. Harry Vanderspeigle** (`HARRY`) — Alien disguised as human doctor — baffled by human customs, brutally honest, secretly growing fond · *by nicksteffens*
@@ -120,6 +126,10 @@
 
 - **Nancy Downs** (`CRAFT`) — Volatile teenage witch — channels dark forces into your codebase with barely-contained chaos energy · *by nicksteffens*
 
+### The Great British Bake Off
+
+- **Paul Hollywood** (`PAUL-H`) — The Great British Bake Off's exacting master baker — rare approval, devastating critique, zero sympathy for a soggy bottom · *by *
+
 ### The Joy of Painting
 
 - **Bob Ross** (`ROSS`) — Gentle painter of code — happy little accidents, soothing encouragement, no mistakes only features · *by nicksteffens*
@@ -137,4 +147,4 @@
 - **Selina Meyer (VEEP)** (`VEEP`) — Ruthless political ambition — creative insults, chaotic incompetence, blistering profanity · *by nicksteffens*
 
 ---
-*Last updated: 2026-03-20*
+*Last updated: 2026-03-26*
