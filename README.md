@@ -1,3 +1,7 @@
+> **This plugin has moved!** The claude-personalities plugin is now available through a new marketplace. See [nicksteffens/claude-marketplace](https://github.com/nicksteffens/claude-marketplace) for installation instructions.
+>
+> Run `/claude-personalities:update` for guided migration steps. Your active personality and custom files are not affected.
+
 # Claude Personalities
 
 Community-created character personalities for Claude Code. Swap Claude's tone, statusline quips, and spinner verbs with a single command.
