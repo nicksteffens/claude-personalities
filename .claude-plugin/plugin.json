@@ -9,6 +9,8 @@
   "homepage": "https://github.com/nicksteffens/claude-personalities",
   "repository": "https://github.com/nicksteffens/claude-personalities",
   "license": "MIT",
+  "deprecated": true,
+  "deprecatedMessage": "This plugin has moved to nicksteffens/claude-marketplace. Run /claude-personalities:update for migration instructions.",
   "keywords": [
     "personality",
     "theme",
